@@ -1,7 +1,8 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { flatRoutes } from 'remix-flat-routes'
 
 export default defineConfig({
-  plugins: [remix(), tsconfigPaths()],
+  plugins: [remix({ appDirectory: 'src', routes: defineRoutes => flatRoutes('routes', defineRoutes, { appDir: 'src' }) }), tsconfigPaths()],
 });

@@ -5,7 +5,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+// eslint-disable-next-line import/no-unresolved
+import styles from "@/index.css?url";
 
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
+}
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
